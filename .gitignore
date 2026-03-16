@@ -1,0 +1,25 @@
+# ========================
+# Node.js (Frontend & Backend)
+# ========================
+node_modules/
+npm-debug.log
+build/
+dist/
+.env
+
+# ========================
+# Python (AI Services)
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+ai-services/ai_env/
+ai_env/
+venv/
+*.env
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
