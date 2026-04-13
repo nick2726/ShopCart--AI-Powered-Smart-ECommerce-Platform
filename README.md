@@ -56,42 +56,33 @@ Follow these instructions to set up the project locally on your machine.
    ```bash
    git clone [https://github.com/yourusername/e-commerce.git](https://github.com/yourusername/e-commerce.git)
    cd e-commerce
-   2. Setup the Backend:
-cd backend
-npm install
+2. **Setup the Backend:**
+   ```bash
+    cd backend
+    npm install
+3. **Setup the Frontend:**
+   ```bash
+    cd ../frontend
+    npm install
+4. **Environment Variables:**
+   ```bash
+     Create a .env file in the backend directory and add the following keys:
+     PORT=8080
+     MONGODB_URI=your_mongodb_connection_string
+     TOKEN_SECRET_KEY=your_jwt_secret_key
+     FRONTEND_URL=http://localhost:3000
+     STRIPE_SECRET_KEY=your_stripe_secret_key
+     Add your AI Service API keys if applicable
+5. **Run the Application:**
+   ```bash
+   Open two terminals.
+   Terminal 1 (Backend):
+   cd backend
+   npm start
+   Terminal 2 (Frontend):
+   cd frontend
+   npm start
 
-3. Setup the Frontend:
-cd ../frontend
-npm install
-
-4. Environment Variables:
-Create a .env file in the backend directory and add the following keys:
-PORT=8080
-MONGODB_URI=your_mongodb_connection_string
-TOKEN_SECRET_KEY=your_jwt_secret_key
-FRONTEND_URL=http://localhost:3000
-STRIPE_SECRET_KEY=your_stripe_secret_key
-Add your AI Service API keys if applicable
-
-5. Run the Application:
-Open two terminals.
-
-Terminal 1 (Backend):
-cd backend
-npm start
-
-Terminal 2 (Frontend):
-cd frontend
-npm start
-
-📁 Architecture Overview
-This project utilizes a decoupled architecture where the React frontend communicates with the Express backend via RESTful APIs.
-
-Auth Flow: Users are authenticated via HTTP-only cookies storing JWTs.
-
-Search Flow: Search queries hit the Node backend; if direct DB matches fail or threshold is low, Axios routes the query to an external AI/Python service for vector/semantic evaluation.
-
-Payment Flow: Stripe handles the secure tokenization of payment methods, ensuring PCI compliance.
 
 
 
